@@ -1,0 +1,62 @@
+.dashboard{
+    
+        width:85.7%;
+        margin-top:20px;
+        margin-left:7.2%;
+     	box-shadow: 0 4px 4px 0 rgba(0,0,0,0.12);
+        border-radius:4px;    
+    }
+    
+    .dashboard thead{
+        background: #F4F7F8;
+        border: 0 solid #E2E9EC;
+    }
+    
+    .dashboard thead th{
+        font-size: 14px;
+        color: #005E9C;
+        letter-spacing: 0.44px;
+    }
+    .dashboard tbody tr{
+       
+        border: 0 solid #E2E9EC;
+        
+    }
+    .dashboard tbody tr td{
+        font-size: 14px;
+        color: #414550;
+        letter-spacing: 0.44px;
+    }
+    .table-box{
+        border: 0 solid #E2E9EC;
+        box-shadow: 0 3px 5px 0 rgba(0,0,0,0.12);
+        border-radius: 4px;
+        margin-top:17px;
+        margin-left:6.8%;
+        width:85.6%;
+        padding-top:18px;
+        
+
+    }
+
+    .due_date{
+
+        background-color: rgba(248, 203, 204, 0.98);
+       
+    }
+
+    .date{
+        background-color: #FFFFFF;
+    }
+
+    .component_header{
+        height: 60px;
+        width:100%;
+        box-shadow: 0 4px 4px 0 rgba(0,0,0,0.12);
+        padding-left:7.2%;
+        font-size: 22px;
+        color:#606B6F;
+        font-weight: 500;
+        line-height: 50px;
+        
+      }

@@ -1,0 +1,16 @@
+<div class="login" >
+  <p></p>
+  <div class="login_container row">
+ 
+  <span class="col-md-6 login_container0_right">
+  <form #loginFrm="ngForm" (ngSubmit)="login()">
+    <div class="col-lg-5 col-sm-12">
+     <h3 class="login_heading">Login</h3>	   
+     <input  placeholder="Username" type="text" name="userId" id="userId" [(ngModel)]="username"/> <br>
+     <input  placeholder="Password" type="password" name="password" id="password" [(ngModel)]="password" />   
+     <div  class="login_btn" (click)="login(username,password)"><input type="submit" style="display:none"/>Submit</div>
+    </div>
+   </form>  
+  </span> 
+  </div>
+  </div>

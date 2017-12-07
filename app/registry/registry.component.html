@@ -1,0 +1,45 @@
+<div class="component_header"> <img src="../../assets/images/sr_list.png" width="50" height="50">Registry View <span style="margin-left:75%;cursor:pointer;font-size:18px;"  (click)="home()"><b>&#8630; Home</b></span></div>
+
+<div class="clear"></div>
+<br>
+<!-- table-->   
+<br>
+<span style=" margin-left:7.2%;" class="row"><b class="col-md-2">Search by Applicant Name:</b> <input type="text" [(ngModel)]="app_name" class="form-control col-md-2" style="text-align:center;"/> </span>
+<div>
+
+
+</div>   
+
+ <table class="table dashboard table-box">
+    <thead>
+        <tr>
+            <th>Service Request Id</th>
+            <th>Applicant Name</th>
+            <th>Document Type</th>
+           <th>Issuing Country</th>
+           <th>Old Status</th>
+           <th>New Status</th>
+           <th>LastActionUser</th>
+           <th>Last Action</th>
+        </tr>
+      </thead>
+     <tbody>
+        <tr *ngFor="let row of data_arr|Tablesort3:app_name ;let i=index;">
+          <td>{{row.ServiceRequestId}}</td>
+          <td>{{row.ApplicantName}}</td>
+          <td>{{row.DocumentType}}</td>
+          <td>{{row.IssuingCountry}}</td>
+          <td>{{row.OldServiceRequestStatus}}</td>
+          <td>{{row.NewServiceRequestStatus}}</td>
+          <td>{{row.LastActionUser}}</td>
+          <td>{{row.LastActionDateTime}}</td>
+         
+        </tr>
+        
+      </tbody>
+     
+  </table>
+  
+   <!--    <div style="text-align:right;margin-right:90px;" class="my-pagination"><pagination-controls (pageChange)="p = $event" nextLabel="" previousLabel=""></pagination-controls></div>-->
+   
+  

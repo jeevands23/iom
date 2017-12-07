@@ -1,0 +1,49 @@
+<div class="component_header"> <img src="../../assets/images/sr_list.png" width="50" height="50">Service Request List <span style="margin-left:68%;cursor:pointer;font-size:18px;"  (click)="home()"><b>&#8630; Home</b></span></div>
+
+<br>
+<!-- table-->   
+<br>
+<span style=" margin-left:7.2%;" class="float-left"><b>show</b> <input type="text" [(ngModel)]="page_no" style="text-align:center;width: 30px;"/> entries</span>
+<div>
+  
+
+    <select [(ngModel)]="select_opt" class="float-right" style="margin-right:8.5%">
+        <option *ngFor="let x of options" [selected]="select_opt == x">{{x}}</option>
+    </select>
+
+
+</div>   
+<div class="clear"></div>
+ <table class="table dashboard table-box">
+    <thead>
+        <tr>
+            <th>Request No.</th>
+            <th>Request Date</th>
+            <th>Consulate  officer</th>
+           <th>Applicant Name</th>
+           <th>Request Status</th>
+           <th>Due date</th>
+           <th>Action</th>
+        </tr>
+      </thead>
+     <tbody>
+        <tr *ngFor="let row of data_arr| Tablesort: select_opt | paginate: { itemsPerPage: page_no, currentPage: p };let i=index;"  [ngClass]="(row.due==true && row.status=='Under Assessment')?'due_date':'date'">
+          <td>{{row.requestId}}</td>
+          <td>{{row.requestDate}}</td> 
+          <td>{{row.consularOfficerName}}</td> 
+          <td (click)="complet(row.requestId,p)"><u style="cursor:pointer;color:blue" >{{row.applicantName}}</u></td> 
+          <td >{{row.status}}</td> 
+          <td>{{row.assessmentDueDate}}</td> 
+          <td><button *ngIf="row.status=='Under Assessment'"  (click)="assess_request(row.requestId,p)">Assess Request</button>
+            <button *ngIf="row.status=='Agreed'" (click)="execute_request(row.requestId,p)">Execute Request</button>
+         
+        </td>
+        </tr>
+        
+      </tbody>
+     
+  </table>
+  
+       <div style="text-align:right;margin-right:90px;" class="my-pagination"><pagination-controls (pageChange)="p = $event" nextLabel="" previousLabel=""></pagination-controls></div>
+   
+  

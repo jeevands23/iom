@@ -1,0 +1,12 @@
+<nav *ngIf="showNavbar">
+    <div  class="header_bar">
+          <h4 class="float-left" ><img src="../../assets/images/logo.png" width="176" height="60" style="margin-top:-10px; ">
+          </h4>  		  
+          
+            <div class="float-right" style="width:250px;padding-top:20px">
+                <span class="menu-btn logout" *ngIf="userName" style="margin-right:0px">{{userName}}&nbsp;|&nbsp;</span>
+              <a class="menu-btn logout" routerLink="/login" (click)="logout()" >Logout&nbsp;<img src="../../assets/images/Logout.png" width="17" height="17"></a>
+              </div>      
+    </div>
+    <div class="clear"></div>
+  </nav>

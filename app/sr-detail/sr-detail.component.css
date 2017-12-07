@@ -1,0 +1,38 @@
+.po_detail_box{
+    background: #F4F7F8;
+    width:85.7%;
+    height: 8.1%;
+    
+    padding:1.5%;
+    font-size: 12px;
+    color: #1D6DBB;
+    letter-spacing: 0;
+    margin-left:7.2%;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.12);
+    border-radius: 4px;
+  }
+
+  .po_field_val{
+    font-size: 14px;
+    color: #94979E;
+    letter-spacing: 0.4px;
+    margin-top:4px;
+  }
+  .asterisk:before{
+    color:#DA0606;
+    content:' *';
+
+}
+
+.input_box {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #6F6B6B;
+    color: #201F1F;
+    width: 160px;
+   
+    font-size: 15px;
+   
+    
+  }

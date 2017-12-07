@@ -1,0 +1,107 @@
+
+#container{
+    margin:0 auto;
+    font-family: Arial;
+    padding:20px;
+  }
+  
+  
+  .bgColorBlue{
+      background-color:#4278bd;
+      border-radius: 5px;
+      font-size: 20px;
+      color: #fff;
+      width:32%;
+      float:left;
+  }
+  
+  .bgColorGreen{
+      background-color:#27b679;
+      border-radius: 5px;
+      font-size: 20px;
+      color: #fff;
+      width:32%;
+      float:left;
+      margin:0 2%;
+  }
+  
+  .bgColorOrange{
+      background-color:#fdb838;
+      border-radius: 5px;
+      font-size: 20px;
+      color: #fff;
+      width:32%;
+      float:left;
+  }
+  
+  
+  
+  .Data{
+      padding:20px;
+      box-sizing:border-box;
+  }
+  
+  .digit{
+      font-size: 60px;
+      font-weight:bold;
+  }
+  
+  .imgSize{
+      width:100px;
+      position:relative;
+      top:10px;
+  }
+  
+  .imgWidth{
+          width: 50%;
+      display: inline-block;
+  }
+
+
+
+/* Donut */
+
+
+.donutGraph{
+	width:580px;
+}
+
+.donutContainer{
+	 margin: 20px 0;
+    font-family: arial;
+    float:left
+}
+
+.donutHeading{
+	
+	display: inline-block;
+    width: 50%;
+    padding: 10px 0;
+    font-size: 22px;
+    color:#3B3B4A;
+    font-weight: 600;
+}
+
+.barContainer{
+ 	margin: 20px 0;
+    font-family: arial;
+    float:left;
+    width:580px;
+	
+}
+
+.barGraph{
+    width:880px;
+    height:10px;
+}
+.component_header{
+    height: 60px;
+    width:100%;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.12);
+    padding-left:7.2%;
+    font-size: 22px;
+    color:#606B6F;
+    font-weight: 500;
+    line-height: 50px;
+    
+  }

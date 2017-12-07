@@ -1,0 +1,113 @@
+
+<div class="component_header"> <img src="../../assets/images/Service_request.png" width="50" height="50">Creat New Service request</div>
+<div>
+<br>
+
+<h3 class="sub_heading">General Information</h3>
+<form ngNativeValidate>
+   
+<div class="po_detail_box" >
+    <div class="row ">
+       <div class="col-md-4 form-group">
+         
+          <label for="state">Requesting Member State <span class="asterisk"></span></label>
+              <input class="form-control" id="state" placeholder="" type="text"  [(ngModel)]="memberState"  [readonly]="true"  name="memberState" required/>
+         
+       </div>
+
+       <div  class="col-md-1"></div>
+       <div class="col-md-4 form-group">
+        <label for="state">Requesting Consulate Officer Name <span class="asterisk"></span></label>
+        <input class="form-control" id="state" placeholder="" type="text" [(ngModel)]="consularOfficerName" name="consularOfficerName"  required/>
+       </div>
+    </div>
+    <br>
+    <div  class="row" >
+       <div class="col-md-4 ">
+        <label>Date of Request<span class="asterisk"></span></label>
+        <input class="form-control" id="state" placeholder="" type="text" [(ngModel)]="requestDate" name="requestDate" />
+       </div>
+       <div  class="col-md-1"></div>
+       <div class="col-md-4">
+        <label for="state">Document issuing Country <span class="asterisk"></span></label>
+        <select class="form-control" [(ngModel)]="documentIssuingCountry" name="country" >
+            <option *ngFor="let x of country_list" [selected]="documentIssuingCountry == x">{{x}}</option>
+        
+        </select>
+       </div>
+    </div>
+
+<br>
+
+    <div  class="row" >
+        <div class="col-md-4">
+            <label for="state">Applicant Name<span class="asterisk"></span></label>
+            <input class="form-control" id="state" placeholder="" type="text" [(ngModel)]="applicantName" name="applicantName" required />
+        </div>
+        <div  class="col-md-1"></div>
+        <div class="col-md-4">
+            <label for="state">Requestor comments <span class="asterisk"></span></label>
+        
+             <textarea name="" id="" cols="60" rows="5" [(ngModel)]="requestorComment" name="requestorComment" required></textarea>
+         
+        </div>
+     </div>
+   <!--  <button type="submit" class="btn btn-primary">Submit</button>-->
+
+ </div>
+    
+
+<br><br>
+
+
+<h3 class="sub_heading">Supporting Documents</h3>
+
+ 
+<div class="po_detail_box" >
+    <div class="row ">
+       <div class="col-md-4 form-group">
+         
+          <label for="state">Select the Document</label>
+<br>
+          <select class="form-control" [(ngModel)]="documentType"  name="doc">
+                <option  *ngFor="let x of doc_list" [selected]="documentType == x">{{x}}</option>
+            
+            </select>
+            <iframe src="../../assets/images/ss.html" frameBorder="0" height="40"></iframe>
+
+       </div>
+
+       <div  class="col-md-1"></div>
+       <div class="col-md-4 form-group">
+        <label for="state">Issuing Authority Name </label>
+        <input class="form-control" id="state"  type="text" [(ngModel)]="documentIssuingAuthority" name="documentIssuingAuthority" />
+       </div>
+    </div>
+    
+    
+     <input type="submit" class="btn btn-primary float-right" style=" margin-left:50px" (click)="onSubmit()" value="Submit">
+     
+     <button class="btn btn-warning float-right"  (click)="back()">Cancel</button>
+     <br>
+
+    </div>
+</form>
+    <br>
+    
+
+</div>
+
+
+  <div class="myloader" *ngIf="show_loader">
+    <div class="loader">Loading...</div>
+  </div>
+
+  <!--<form [formGroup]="form" (ngSubmit)="onSubmit1()">
+    
+    <div class="form-group">
+      <label for="avatar">Avatar</label>
+      <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput>
+      <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button>
+    </div>
+    <button type="submit" class="btn btn-success">Submit </button>
+  </form>-->

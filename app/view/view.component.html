@@ -1,0 +1,232 @@
+
+<div class="track_status_box">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <div class="progress">
+      <div class="circle" [ngClass]="{'Under Assessment':'done','Agreed':'done','Agree Service':'done','Completed':'done'}[status]">	                        
+          <span>&#10003;</span> 
+          <span class="title">New Request</span>	
+      </div>
+      <span class="bar" [ngClass]="{'Under Assessment':'','Agreed':'done','Agree Service':'done','Completed':'done'}[status]"></span>
+      <div class="circle" [ngClass]="{'Under Assessment':'','Agreed':'done','Agree Service':'done','Completed':'done'}[status]">                      
+          <span  *ngIf="status=='Agreed' || status=='Agree Service' || status=='Completed'|| status=='I_START'|| status=='I_END'|| status=='END-READYTOMOVE'|| status=='FAIL-READYTOMOVE'">&#10003;</span> 
+          <span class="title">Assess Request</span>
+      </div>
+      <span class="bar" [ngClass]="{'Under Assessment':'','Agreed':'done','Agree Service':'done','Completed':'done'}[status]"></span>
+      <div class="circle" [ngClass]="{'Under Assessment':'','Agreed':'done','Agree Service':'done','Completed':'done'}[status]">	                       
+              <span  *ngIf="status=='Agreed' || status=='Completed'|| status=='I_START'|| status=='I_END'|| status=='END-READYTOMOVE'|| status=='FAIL-READYTOMOVE'">&#10003;</span> 
+              <span class="title">Agree Service</span>	
+      </div>
+      <span class="bar" [ngClass]="{'Under Assessment':'','Agreed':'','Agree Service':'','Completed':'done'}[status]"></span>
+      <div class="circle" [ngClass]="{'Under Assessment':'','Agreed':'','Agree Service':'','Completed':'done'}[status]">	                        
+           <span  *ngIf="status=='Completed'|| status=='I_START'|| status=='I_END'|| status=='END-READYTOMOVE'|| status=='FAIL-READYTOMOVE'">&#10003;</span> 
+           <span class="title">Execute Service</span>	
+      </div>
+    
+     
+</div>
+
+</div>
+
+
+
+
+
+<h3 class="sub_heading">General Information(Read Only)</h3>
+
+ 
+<div class="po_detail_box" >
+  <div class="row ">
+     <div class="col-md-4 form-group">
+       
+        <label for="state">Requesting Member State</label>
+            <input class="form-control" id="state"  type="text"  [(ngModel)]="memberState" [readonly]="true" />
+       
+     </div>
+
+     <div  class="col-md-1"></div>
+     <div class="col-md-4 form-group">
+      <label for="state">Requesting Consulate Officer Name</label>
+      <input class="form-control" id="state" placeholder="" type="text" [(ngModel)]="consularOfficerName" [readonly]="true"  />
+     </div>
+  </div>
+  <br>
+  <div  class="row" >
+     <div class="col-md-4 ">
+      <label>Date of Request</label>
+      <input class="form-control" id="state" placeholder="" type="text" [(ngModel)]="requestDate" [readonly]="true" />
+     </div>
+     <div  class="col-md-1"></div>
+     <div class="col-md-4">
+      <label for="state">Document issuing Country </label>
+      <input class="form-control" id="state"  type="text" [(ngModel)]="documentIssuingCountry"  [readonly]="true" />
+     </div>
+  </div>
+
+<br>
+
+  <div  class="row" >
+      <div class="col-md-4">
+          <label for="state">Applicant Name</label>
+          <input class="form-control" id="state" placeholder="" type="text" [(ngModel)]="applicantName" [readonly]="true"  />
+      </div>
+      <div  class="col-md-1"></div>
+      <div class="col-md-4">
+          <label for="state">Requestor comments </label>
+      
+           <textarea name="" id="" cols="60" rows="5"  [(ngModel)]="requestorComment" style="background-color:#EDEEED" [readonly]="true" ></textarea>
+       
+      </div>
+   </div>
+
+
+</div>
+  
+
+
+
+
+<br><br>
+
+
+<h3 class="sub_heading">Supporting Documents(Read Only)</h3>
+
+ 
+<div class="po_detail_box" >
+  <div class="row ">
+     <div class="col-md-4 form-group">
+       
+        <label for="state">Selected Document Type</label>
+        <input class="form-control" id="state"  type="text" [(ngModel)]="documentType"  [readonly]="true" /><br>
+        <a target="_blank" href={{doc_url}}><img src="../../assets/images/doc.png" height="30" ></a>
+       
+     </div>
+
+     <div  class="col-md-1"></div>
+     <div class="col-md-4 form-group">
+      <label for="state">Issuing Authority Name </label>
+      <input class="form-control" id="state"  type="text" [(ngModel)]="documentIssuingAuthority"  [readonly]="true" />
+   
+     </div>
+  </div>
+
+
+  </div>
+  
+<br>
+
+<div *ngIf="quotation">
+<h3 class="sub_heading">Assessment Result</h3>
+
+ 
+<div class="po_detail_box" >
+  <div class="row ">
+          <div  class="col-md-4">
+                  <label for="state">Request Type </label>
+          <br>
+         
+
+          <input class="form-control" id="state"  type="text" [(ngModel)]="type"  [readonly]="true" />
+             </div>
+
+     <div  class="col-md-1"></div>
+     <div class="col-md-4 form-group">
+      <label for="state">Estimated Quotation (in USD) </label>
+      <input class="form-control" id="state"  type="text" [(ngModel)]="quotation"  [readonly]="true" />
+   
+     </div>
+  </div>
+
+<br>
+
+  <div class="row ">
+          <div  class="col-md-4">
+                  <label for="state">Assessment Decision</label>
+          <br>
+
+
+          <input class="form-control" id="state"  type="text" [(ngModel)]="status"  [readonly]="true" />
+              
+
+
+
+
+      </div>
+
+     <div  class="col-md-1"></div>
+     <div class="col-md-4 form-group">
+      <label for="state">Assessor Comments  </label>
+      <input class="form-control" id="state"  type="text" [(ngModel)]="Requestors_cmts"  [readonly]="true" />
+   
+     </div>
+  </div>
+
+  </div>
+</div>
+<br>
+
+<div *ngIf="isDcocumentIssuingAuthorityExists">
+<h3 class="sub_heading">Complet Service Request</h3>
+
+ 
+<div class="po_detail_box" >
+ 
+<span class="float-left">Does this Document Issuing authority exits in the location as specified in the document?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+      
+      
+       <label for="switch_left_3" style="width:50px;color:#464845;font-size:18px" *ngIf="isDcocumentIssuingAuthorityExists=='Y'">Yes</label>
+      
+       <label for="switch_left_3" style="width:50px;color:#464845;font-size:18px" *ngIf="isDcocumentIssuingAuthorityExists=='N'">No</label>
+   
+    
+<div class="clear"></div>
+     <br>
+<textarea name="" id="" cols="100" rows="4"  [(ngModel)]="dcocumentIssuingAuthorityComment" style="background-color:#EDEEED" placeholder="Provide comment" ></textarea>
+
+<br><br>
+
+
+<span class="float-left">Are the details of the applicant specified in the document valid?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+      
+      
+       <label for="switch_left_4" style="width:50px;color:#464845;font-size:18px" *ngIf="isDcocumentValid=='Y'">Yes</label>
+      
+       <label for="switch_right_4" style="width:50px;color:#464845;font-size:18px"*ngIf="isDcocumentValid=='N'">No</label>
+   
+<div class="clear"></div>
+     <br>
+<textarea name="" id="" cols="100" rows="4"  [(ngModel)]="dcocumentValidityComment" placeholder="Provide comment" style="background-color:#EDEEED" ></textarea>
+
+<br>
+<br><br>
+<div class="row">
+<div class="col-md-3">
+<span>Verification Outcome :</span>
+    
+              
+              
+               <label for="switch_left_5" style="width:150px;color:#464845;font-size:18px" *ngIf="isDcocumentVerificable=='Y'">Valid Document</label>
+             
+               <label for="switch_right_5" style="width:150px;color:#464845;font-size:18px" *ngIf="isDcocumentVerificable=='N'">Invalid Document</label>
+            
+            
+</div>
+<div  class="col-md-3"></div>
+<div  class="col-md-3">
+
+  <label for="state">Dcocument Verification Date </label>
+  <input class="form-control" id="state"  type="text" [(ngModel)]="dcocumentVerificationDate"  [readonly]="true" />
+
+</div>
+
+</div>
+<div> <label for="state">View Document</label>
+ 
+  <a target="_blank" href={{verif_doc_url}}><img src="../../assets/images/doc.png" height="30" ></a></div>
+  </div>
+  
+</div>
+  <br>
+  <button class="btn btn-warning"  style="margin-left:87%"(click)="close()">Close</button>
+  <br>

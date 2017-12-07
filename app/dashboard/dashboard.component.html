@@ -1,0 +1,83 @@
+<div class="component_header"> <img src="../../assets/images/dash.png" width="50" height="50">Dashboard<span style="margin-left:76%;cursor:pointer;font-size:18px"  (click)="home()"><b>&#8630; Home</b></span></div>
+
+<div class="clear"></div>
+<section  id="container">
+    
+    
+    
+      <div ngClass="bgColorBlue Data" >
+        
+        <div>Assesment Turn Arround Time (ATT)</div>
+        <div><span class="imgWidth"><img src="../../assets/images/indicator.png" class="imgSize"/></span><span ngClass="digit">{{digit_Att| number : '1.2-2'}}</span>Hrs</div>
+       <br>
+        <div>{{result_Att}}</div>
+      
+      </div>
+    
+      <div ngClass="bgColorGreen Data">
+      
+          <div>Completion Turn Arround Time (CTT)</div>
+          <div><span class="imgWidth"><img src="../../assets/images/indicator.png" class="imgSize"/></span><span ngClass="digit">{{digit_Ctt | number : '1.2-2' }}</span>Days</div>
+      <br>
+          <div>{{result_Ctt}}</div>
+      
+      </div>
+    
+      <div  ngClass="bgColorOrange Data">
+      
+          <div>Fraud Detection Rate</div>
+          <div><span class="imgWidth"><img src="../../assets/images/indicator.png" class="imgSize"/></span><span ngClass="digit">{{digit| number : '1.2-2'}}</span>%</div>
+       <br>
+          <div>{{result}}</div>
+      
+      </div>  
+    
+      <div class="clear"></div>
+    
+    
+    </section>
+<hr>
+    <br><br>
+<div class="row">
+<div class="col-md-4">
+<div *ngIf="chart" >
+    <span class="donutHeading" style="text-align:center;margin-left:30%;">Open Service Request</span>
+        <div  class="donutGraph">
+          <canvas baseChart
+                      [data]="doughnutChartData"
+                      [labels]="doughnutChartLabels"
+                      [chartType]="doughnutChartType"
+                      (chartHover)="chartHovered($event)"
+                      (chartClick)="chartClicked($event)"></canvas>
+        </div>
+    </div>
+    
+  </div>
+
+  <div class="col-md-1">
+  </div>
+    
+  <div class="col-md-4">
+    
+     <div  *ngIf="chart">
+        <span class="donutHeading">Completed Service Request</span>
+          <div  class="barGraph">
+            <canvas   baseChart width="3" height="1"
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+          </div>
+         
+        </div> 
+      </div>
+      </div>
+    
+        <div class="clear"></div>
+    
+    
+    
+    

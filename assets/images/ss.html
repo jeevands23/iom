@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <body onload="myFunction()">
+  <script>
+function myFunction() {
+//console.log(localStorage.getItem("reqid")+"ppppppppppppppppppp")
+if(localStorage.getItem("reqid"))
+{
+var reqid=localStorage.getItem("reqid")
+document.getElementById("getvalue").setAttribute("value", reqid); 
+}
+setTimeout(myFunction, 1000);
+}
+
+
+</script>
+
+    <form ref='uploadForm' 
+      id='uploadForm' 
+
+	action='http://uniom.mybluemix.net/upload'
+      method='post' 
+      encType="multipart/form-data">
+        <input type="file" name="documentFile" onchange="this.form.submit()"/>
+        <input  id="getvalue"type="hidden" name="requestId"/>
+       
+    </form>     
+  </body>
+</html> 
+
+
+    <!--  action='http://uniom.mybluemix.net/upload' -->
